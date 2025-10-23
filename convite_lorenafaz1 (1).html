@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorena faz 1 🍉</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Comic Sans MS', sans-serif;
+    background: linear-gradient(180deg, #fff8b0, #ffd6d6);
+    overflow-x: hidden;
+    text-align: center;
+    color: #c90000;
+    animation: fadeIn 2s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  .magali {
+    width: 150px;
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+  }
+  h1 {
+    font-size: 2.2em;
+    margin-top: 20px;
+  }
+  p {
+    font-size: 1.2em;
+    margin: 5px 20px;
+  }
+  .buttons {
+    margin-top: 25px;
+  }
+  button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    background-color: #ff7070;
+  }
+  .sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #fff 0%, transparent 70%);
+    border-radius: 50%;
+    animation: sparkleMove 4s infinite;
+  }
+  @keyframes sparkleMove {
+    0% {transform: translateY(0) scale(1); opacity: 1;}
+    50% {transform: translateY(-20px) scale(1.5); opacity: 0.6;}
+    100% {transform: translateY(0) scale(1); opacity: 1;}
+  }
+  #presentes {
+    display: none;
+    background: rgba(255,255,255,0.95);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #presentes div {
+    background: #ffeaea;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+  <div>
+    <img src="https://i.imgur.com/YwU3c6A.png" alt="Magali" class="magali">
+    <h1>Lorena faz 1</h1>
+    <p>Você é meu convidado especial para comemorar meu primeiro aninho!</p>
+    <p><b>Dia:</b> 06/12/2025 (sábado)</p>
+    <p><b>Hora:</b> 15h</p>
+    <div class="buttons">
+      <button onclick="window.open('https://wa.me/5567984134218?text=Olá! Quero confirmar presença no aniversário da Lorena 🍉','_blank')">✅ Confirmar presença</button>
+      <button onclick="mostrarPresentes()">🎁 Sugestões de presente</button>
+      <button onclick="window.open('https://www.google.com/maps?q=Avenida+Marajoara+848,+Campo+Grande,+MS','_blank')">📍 Como chegar</button>
+    </div>
+  </div>
+  <div id="presentes" onclick="fecharPresentes()">
+    <div>
+      <h2>🎁 Sugestões de presente</h2>
+      <p>👗 Roupa tamanho 18 meses</p>
+      <p>👟 Calçado número 19</p>
+      <p>🎲 Brinquedos coloridos e interativos</p>
+      <p style="font-size:0.9em; color:#666;">(Toque em qualquer lugar para fechar)</p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarPresentes() {
+      document.getElementById('presentes').style.display = 'flex';
+    }
+    function fecharPresentes() {
+      document.getElementById('presentes').style.display = 'none';
+    }
+    // criar brilhos
+    for (let i = 0; i < 20; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.animationDelay = Math.random() * 4 + 's';
+      document.body.appendChild(s);
+    }
+  </script>
+</body>
+</html>
